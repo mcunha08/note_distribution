@@ -45,6 +45,32 @@
                     @endif
                 </div>
             </div>
+            <div class="form-group{{ $errors->has('gpa') ? ' has-error' : '' }}">
+                <label for="gpa" class="col-md-4 control-label">GPA</label>
+
+                <div class="col-md-6">
+                    <input id="gpa" type="text" class="form-control" name="gpa" required>
+
+                    @if ($errors->has('gpa'))
+                        <span class="help-block">
+                                        <strong>{{ $errors->first('gpa') }}</strong>
+                                    </span>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group{{ $errors->has('studentid') ? ' has-error' : '' }}">
+                <label for="studentid" class="col-md-4 control-label">Student ID</label>
+
+                <div class="col-md-6">
+                    <input id="studentid" type="file" class="form-control" name="studentid">
+
+                    @if ($errors->has('studentid'))
+                        <span class="help-block">
+                                        <strong>{{ $errors->first('studentid') }}</strong>
+                                    </span>
+                    @endif
+                </div>
+            </div>
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
                     <button type="submit" class="btn btn-primary">

@@ -12,12 +12,17 @@ class RegistrationController extends Controller
         return view('registrations.create');
     }
     public function store(){
+//        dd(request()->all());
         $user = User::create([
             'name' => request('name'),
             'email' => request('email'),
-            'password' => request('password')
+            'password' => bcrypt(request('password')),
+            'gpa' => request('gpa'),
+            'role' => 'InactiveStudent'
         ]);
+//        dd($user->gpa);
         $user->save();
+        auth()->login($user);
         return redirect('/');
     }
 }

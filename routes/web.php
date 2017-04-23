@@ -13,4 +13,8 @@
 
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/register', 'RegistrationController@create');
+Route::get('/users_list', 'AdministratorsController@list');
+Route::get('/users_list/{user}', 'AdministratorsController@show');
 Route::post('/register', 'RegistrationController@store');
+Route::get('/login', 'SessionController@login');
+Route::post('/session', 'SessionController@store');
