@@ -18,3 +18,4 @@ Route::get('/users_list/{user}', 'AdministratorsController@show');
 Route::post('/register', 'RegistrationController@store');
 Route::get('/login', 'SessionController@login');
 Route::post('/session', 'SessionController@store');
+Route::get('/test', 'TestController@home');

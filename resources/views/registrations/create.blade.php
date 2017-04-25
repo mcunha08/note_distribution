@@ -4,7 +4,7 @@
     <div class="col-sm-8 blog-main">
         <h1>Register now</h1>
 
-        <form method="POST" action="/register">
+        <form method="POST" action="/register" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                 <label for="name" class="col-md-4 control-label">Name</label>
