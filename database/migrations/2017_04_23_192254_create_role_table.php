@@ -17,7 +17,18 @@ class CreateRoleTable extends Migration
             $table->increments('id');
             $table->string('role');
         });
-
+        App\Role::create([
+                'role' => 'InactiveStudent'
+            ]);
+        App\Role::create([
+            'role' => 'Student'
+        ]);
+        App\Role::create([
+            'role' => 'Noter'
+        ]);
+        App\Role::create([
+            'role' => 'Administrator'
+        ]);
     }
 
     /**

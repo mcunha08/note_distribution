@@ -62,7 +62,7 @@
                 <label for="studentid" class="col-md-4 control-label">Student ID</label>
 
                 <div class="col-md-6">
-                    <input id="studentid" type="file" class="form-control" name="studentid">
+                    <input id="studentid" type="file" class="form-control" name="studentid" required>
 
                     @if ($errors->has('studentid'))
                         <span class="help-block">

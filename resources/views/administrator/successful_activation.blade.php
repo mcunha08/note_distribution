@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="col-sm-8 blog-main">
-        <h1>Test grounds</h1>
-        <img src="{{ Storage::disk('local')->url($imgurl) }}" height="320" width="520">
+        <h1>Successfully activated {{$user->name}}</h1>
     </div><!-- /.blog-main -->
 @endsection

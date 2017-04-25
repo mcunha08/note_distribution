@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Role;
 use Illuminate\Support\Facades\Input;
 class RegistrationController extends Controller
 {
@@ -14,7 +15,7 @@ class RegistrationController extends Controller
     public function store(){
 //        $username = auth()->user()->name;
         if(request()->hasFile('studentid')) {
-            $file = request()->file('studentid')->store('public', 'public');
+            $file = request()->file('studentid')->store('public');
 //            $ext = $file->guessClientExtension();
 //            $file->storeAs("studentids/", auth()->id(), 'studentid.{$ext}');
         }
@@ -27,7 +28,7 @@ class RegistrationController extends Controller
             'password' => bcrypt(request('password')),
             'gpa' => request('gpa'),
             'studentid' => $file,
-            'role' => 'InactiveStudent'
+            'role_id' => Role::where('role', 'InactiveStudent')->first()->id
         ]);
         $user->save();
         auth()->login($user);
