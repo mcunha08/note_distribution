@@ -5,26 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4eea866-1bdd-423a-b9f7-575b6d07a84f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/administrator/successful_activation.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/administrator/yo.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/uploads/successful_upload.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/uploads/upload_form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdministratorsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdministratorsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Role.php" afterPath="$PROJECT_DIR$/app/Role.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_04_23_192254_create_role_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_04_23_192254_create_role_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/administrator/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/administrator/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/sidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/registrations/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/registrations/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/test/playground.blade.php" afterPath="$PROJECT_DIR$/resources/views/test/playground.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <ignored path="note_distribution.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,6 +58,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="23" column="46" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="successful_upload.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/uploads/successful_upload.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -97,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/partials/sidebar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="99">
-              <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -133,18 +124,6 @@
             <state relative-caret-position="165">
               <caret line="5" column="60" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="60" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Role.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Role.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="36" />
-              <folding>
-                <element signature="e#23#62#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -203,6 +182,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -716,10 +698,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21329000" />
+    <option name="totallyTimeSpent" value="21747000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="-13" width="2586" height="1386" extended-state="6" />
+    <frame x="-13" y="-13" width="2586" height="1386" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17539063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -837,7 +819,7 @@
         <state relative-caret-position="323">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="e#23#63#0#PHP" expanded="true" />
+            <element signature="e#23#63#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1056,7 +1038,7 @@
         <state relative-caret-position="491">
           <caret line="22" column="6" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="6" />
           <folding>
-            <element signature="e#23#63#0#PHP" expanded="true" />
+            <element signature="e#23#63#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1065,14 +1047,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="18" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="23" column="46" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1174,7 +1148,15 @@
     <entry file="file://$PROJECT_DIR$/resources/views/partials/sidebar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="46" />
           <folding />
         </state>
       </provider>
