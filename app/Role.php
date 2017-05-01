@@ -8,10 +8,8 @@ class Role extends Model
 {
      public $timestamps = false;
      protected $fillable = ['role'];
-
-    public function users()
+     public function users()
      {
-         return $this->belongsToMany(User::class);
+         return $this->hasMany(User::class);
      }
-
 }

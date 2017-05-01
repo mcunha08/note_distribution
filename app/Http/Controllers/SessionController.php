@@ -12,7 +12,8 @@ class SessionController extends Controller
     public function store(){
         //Attempt to authenitace thee agk;j
         if(!auth()->attempt(request(['email', 'password']))){
-            return back()->withErrors(['message'=>'Failed to login']);
+            return redirect('/');
+//            return back()->withErrors(['message'=>'Failed to login']);
         }
         return redirect('/');
     }

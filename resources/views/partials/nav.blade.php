@@ -48,6 +48,7 @@
                         </button>
                     </div>
                 </div>
+                </form>
         </nav>
     </div>
 </div>

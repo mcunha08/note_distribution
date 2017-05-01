@@ -33,7 +33,7 @@ class User extends Authenticatable
     public function assignRole($name){
         $this->roles()->create(compact('name'));
     }
-    public function hasRole($id){
-        return $this->roles()->contains($id);
-     }
+//    public function hasRole($id){
+//        return $this->roles()->contains($id);
+//     }
 }
