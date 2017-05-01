@@ -9,6 +9,7 @@
             <li>Roles: {{ App\Role::find($user->role_id)->role }}</li>
         </ul>
         <img src="{{ Storage::disk('local')->url($user->studentid) }}" height="320" width="520">
+        <br/>
         <a href="/activate_student/{{ $user->id }}">Activate this student</a>
 
     </div><!-- /.blog-main -->

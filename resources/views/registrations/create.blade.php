@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="form-group{{ $errors->has('studentid') ? ' has-error' : '' }}">
-                <label for="studentid" class="col-md-4 control-label">Student ID</label>
+                <label for="studentid" class="col-md-4 control-label">Student ID Image</label>
 
                 <div class="col-md-6">
                     <input id="studentid" type="file" class="form-control" name="studentid" required>

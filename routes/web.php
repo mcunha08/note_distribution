@@ -18,6 +18,7 @@ Route::get('/users_list/{user}', 'AdministratorsController@show');
 Route::get('/activate_student/{user}', 'AdministratorsController@activate');
 Route::post('/register', 'RegistrationController@store');
 Route::get('/login', 'SessionController@login');
+Route::get('/logout', 'SessionController@destroy');
 Route::post('/session', 'SessionController@store');
 Route::get('/test', 'TestController@home');
 Route::get('/upload', 'UploadController@file_upload');
