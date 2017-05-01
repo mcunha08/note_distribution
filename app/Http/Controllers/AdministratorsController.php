@@ -21,10 +21,10 @@ class AdministratorsController extends Controller
         }
         return view('administrator.yo');
     }
-    public function activate($id){
+    public function activate($id, $role){
         if(auth()->user()->role_id == Role::where("role", "Administrator")->first()->id) {
             $user = User::find($id);
-            $user->role_id = Role::where('role', 'Student')->first()->id;
+            $user->role_id = $role;//Role::find($role)->first()->id;
             $user->save();
             return view('administrator.successful_activation', compact('user'));
         }

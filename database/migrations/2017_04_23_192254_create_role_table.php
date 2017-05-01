@@ -29,6 +29,7 @@ class CreateRoleTable extends Migration
         App\Role::create([
             'role' => 'Administrator'
         ]);
+
     }
 
     /**

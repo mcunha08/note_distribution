@@ -16,6 +16,9 @@
                 @endif
             @endif
             @if(Auth::check())
+                <a class="blog-nav-item" href="/course_list">Course List</a>
+            @endif
+            @if(Auth::check())
                 <a class="blog-nav-item" href="/logout">Logout</a>
             @endif
             @if(Auth::check())
@@ -23,6 +26,28 @@
                     <a class="blog-nav-item" href="/users_list">Student List</a>
                 @endif
             @endif
+            <form method="POST" action="/searchcourse" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <div class="form-group{{ $errors->has('searchcourse') ? ' has-error' : '' }}">
+
+                    <div class="col-md-6">
+                        <input id="searchcourse" type="text" class="form-control" name="searchcourse" placeholder="Search for a course">
+
+                        @if ($errors->has('searchcourse'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('searchcourse') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-0 ">
+                        <button type="submit" class="btn btn-primary">
+                            Search
+                        </button>
+                    </div>
+                </div>
         </nav>
     </div>
 </div>

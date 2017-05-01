@@ -16,8 +16,6 @@ class RegistrationController extends Controller
 //        $username = auth()->user()->name;
         if(request()->hasFile('studentid')) {
             $file = request()->file('studentid')->store('public');
-//            $ext = $file->guessClientExtension();
-//            $file->storeAs("studentids/", auth()->id(), 'studentid.{$ext}');
         }
         else{
             return back()->withErrors(['message'=>'Please upload your student id']);

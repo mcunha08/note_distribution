@@ -28,9 +28,12 @@ class User extends Authenticatable
     ];
     public function roles()
     {
-         return $this->belongsTo(Role::class);
+         return $this->belongsToMany(Role::class);
     }
     public function assignRole($name){
         $this->roles()->create(compact('name'));
     }
+    public function hasRole($id){
+        return $this->roles()->contains($id);
+     }
 }
