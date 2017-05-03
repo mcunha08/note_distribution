@@ -21,7 +21,7 @@ class UploadController extends Controller
 
         if(request()->courselist == 0) {
             $coursename = request()->course;
-            $course = Course::where('course_name', $coursename)->first()->id;
+            $course = Course::where('course_name', $coursename)->first();
             if (!$course) {
                 $course = Course::create(['course_name' => $coursename]);
             }
@@ -29,10 +29,15 @@ class UploadController extends Controller
         else{
             $course = request()->courselist;
         }
+//        $upload = new Upload();
+//        $upload->filepath = $file;
+//        $upload->filename = $filename;
+//        $upload->course = $course;
+//        $upload->save();
         $upload = Upload::create([
             'filepath' => $file,
             'filename' => $filename,
-            'course_id' => $course
+            'course_id' => $course->id
         ]);
 
 
