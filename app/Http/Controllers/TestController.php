@@ -12,4 +12,6 @@ class TestController extends Controller
 
         return view('test.playground', compact('imgurl'));
     }
+
+
 }

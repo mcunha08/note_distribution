@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     protected $fillable = ['course_name'];
-    //TODO set up as a relationship
+
+    public function users(){
+        return $this->belongsToMany(User::class)->withTimestamps();
+    }
 }

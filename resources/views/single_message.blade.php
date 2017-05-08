@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="col-sm-8 blog-main">
-        <h1>Yo, you're not an admin.<br/> Get out.</h1>
+        {{ $message }}
     </div><!-- /.blog-main -->
 @endsection

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\UrlGenerator;
 use App\Upload;
 use App\Course;
+use Mail;
 class UploadController extends Controller
 {
     public function file_upload(){
@@ -17,7 +19,6 @@ class UploadController extends Controller
         }
         $filename = request()->file('uploadfile')->getClientOriginalName();
         $file = request()->file('uploadfile')->store('public');
-//        dd(request()->all());
 
         if(request()->courselist == 0) {
             $coursename = request()->course;
@@ -27,20 +28,25 @@ class UploadController extends Controller
             }
         }
         else{
-            $course = request()->courselist;
+            $course = Course::find(request()->courselist);
         }
-//        $upload = new Upload();
-//        $upload->filepath = $file;
-//        $upload->filename = $filename;
-//        $upload->course = $course;
-//        $upload->save();
+
         $upload = Upload::create([
             'filepath' => $file,
             'filename' => $filename,
             'course_id' => $course->id
         ]);
-
-
-        return view('uploads.successful_upload', compact('upload'));
+        $users_to_email = $course->users;
+        $a = [];
+        foreach($users_to_email as $user){
+            $a[] = $user->email;
+        }
+        $user = auth()->user();
+        $url = "";
+        Mail::send('emails.subscribe_notification',compact('course','filename','user', 'url') , function ($m) use ($user, $course) {
+            $m->from('note_distribution@wou.edu', 'Note Distrbution');
+            $m->to($user->email, $user->name)->subject('New course material available for ' . $course->course_name);
+        });
+        return view('uploads.successful_upload', compact('upload', 'filename','user', 'url'));
     }
 }

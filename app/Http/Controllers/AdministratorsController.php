@@ -12,14 +12,16 @@ class AdministratorsController extends Controller
             $users = User::all();
             return view('administrator.users_list', compact('users'));
         }
-        return view('administrator.yo');
+        $message = "Yo, you're not an admin. Get out.";
+        return view('single_message', compact('message'));
     }
     public function show($id){
         if(auth()->user()->role_id == Role::where("role", "Administrator")->first()->id) {
             $user = User::find($id);
             return view('administrator.show', compact('user'));
         }
-        return view('administrator.yo');
+        $message = "Yo, you're not an admin. Get out.";
+        return view('single_message', compact('message'));
     }
     public function activate($id, $role){
         if(auth()->user()->role_id == Role::where("role", "Administrator")->first()->id) {
@@ -28,6 +30,7 @@ class AdministratorsController extends Controller
             $user->save();
             return view('administrator.successful_activation', compact('user'));
         }
-        return view('administrator.yo');
+        $message = "Yo, you're not an admin. Get out.";
+        return view('single_message', compact('message'));
     }
 }

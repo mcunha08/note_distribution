@@ -25,3 +25,4 @@ Route::get('/upload', 'UploadController@file_upload');
 Route::post('/upload', 'UploadController@store');
 Route::post('/searchcourse', 'SearchController@course_search');
 Route::get('/course_list', 'SearchController@list_all');
+Route::get('/subscribe/{course}', 'UserController@subscribe');
