@@ -13,6 +13,9 @@
         <a href="/activate_student/{{ $user->id }}/2">Activate this student</a>
         <br/>
         <a href="/activate_student/{{ $user->id }}/4">Create a new admin</a>
-
+        <br/>
+        @if(Auth::user()->id != $user->id)
+            <a href="/user_delete/{{$user->id}}">Delete this user</a>
+        @endif
     </div><!-- /.blog-main -->
 @endsection

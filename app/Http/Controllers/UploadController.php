@@ -17,9 +17,11 @@ class UploadController extends Controller
         if(!request()->hasFile('uploadfile')) {
             return back();
         }
+        if(empty(request()->course)&& request()->courselist == 0){
+            return back()->withErrors("The course name must contain at least one character");
+        }
         $filename = request()->file('uploadfile')->getClientOriginalName();
         $file = request()->file('uploadfile')->store('public');
-
         if(request()->courselist == 0) {
             $coursename = request()->course;
             $course = Course::where('course_name', $coursename)->first();

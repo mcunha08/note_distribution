@@ -26,6 +26,11 @@
                     <a class="blog-nav-item" href="/users_list">Student List</a>
                 @endif
             @endif
+            @if(Auth::check())
+                @if(auth()->user()->role_id == App\Role::where("role", "Administrator")->first()->id)
+                    <a class="blog-nav-item" href="/file_list">File List</a>
+                @endif
+            @endif
             <form method="POST" action="/searchcourse" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('searchcourse') ? ' has-error' : '' }}">

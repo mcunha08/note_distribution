@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
+use App\Upload;
 class AdministratorsController extends Controller
 {
     public function list(){
@@ -32,5 +33,24 @@ class AdministratorsController extends Controller
         }
         $message = "Yo, you're not an admin. Get out.";
         return view('single_message', compact('message'));
+    }
+
+    public function file_list(){
+        if(auth()->user()->role_id == Role::where("role", "Administrator")->first()->id) {
+            $uploads = Upload::all();
+            return view('administrator.file_list', compact('uploads'));
+        }
+        return redirect('/');
+    }
+    public function file_delete($id){
+        $upload = Upload::find($id);
+        $upload->delete();
+        return back();
+    }
+    public function user_delete($id){
+        $user = User::find($id);
+        $user->delete();
+        $users = User::all();
+        return view('administrator.users_list', compact('users'));
     }
 }

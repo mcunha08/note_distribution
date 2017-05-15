@@ -25,4 +25,8 @@ Route::get('/upload', 'UploadController@file_upload');
 Route::post('/upload', 'UploadController@store');
 Route::post('/searchcourse', 'SearchController@course_search');
 Route::get('/course_list', 'SearchController@list_all');
+Route::get('/course_list/{id}', 'CoursesController@show');
 Route::get('/subscribe/{course}', 'UserController@subscribe');
+Route::get('/file_list', 'AdministratorsController@file_list');
+Route::get('/file_delete/{id}', 'AdministratorsController@file_delete');
+Route::get('/user_delete/{id}', 'AdministratorsController@user_delete');
