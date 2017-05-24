@@ -24,11 +24,6 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        Schema::create('role_user', function (Blueprint $table) {;
-            $table->integer('role_id');
-            $table->integer('user_id');
-            $table->timestamps();
-        });
     }
 
     /**

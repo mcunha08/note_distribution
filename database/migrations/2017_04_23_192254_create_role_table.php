@@ -29,7 +29,11 @@ class CreateRoleTable extends Migration
         App\Role::create([
             'role' => 'Administrator'
         ]);
-
+        Schema::create('role_user', function (Blueprint $table) {;
+            $table->integer('role_id');
+            $table->integer('user_id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -40,5 +44,6 @@ class CreateRoleTable extends Migration
     public function down()
     {
         Schema::dropIfExists('roles');
+        Schema::dropIfExists('role_user');
     }
 }

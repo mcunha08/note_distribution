@@ -30,3 +30,7 @@ Route::get('/subscribe/{course}', 'UserController@subscribe');
 Route::get('/file_list', 'AdministratorsController@file_list');
 Route::get('/file_delete/{id}', 'AdministratorsController@file_delete');
 Route::get('/user_delete/{id}', 'AdministratorsController@user_delete');
+Route::get('/create_post/{id}', 'PostsController@show');
+Route::post('/create_post/{id}', 'PostsController@create');
+Route::get('/posts/{id}', 'PostsController@show_post');
+Route::post('/create_response/{id}', 'ResponseController@create');

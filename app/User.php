@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Role;
+use App\Post;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -33,8 +35,14 @@ class User extends Authenticatable
     public function courses(){
         return $this->belongsToMany(Course::class)->withTimestamps();
     }
+    public function uploads(){
+        return $this->hasMany(Upload::class);
+    }
     public function assignRole($name){
         $this->roles()->create(compact('name'));
+    }
+    public function posts(){
+        return $this->hasMany(Post::class);
     }
 //    public function hasRole($id){
 //        return $this->roles()->contains($id);

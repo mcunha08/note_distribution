@@ -13,7 +13,7 @@
             <tr>
                 <td>{{ $upload->id }}</td>
                 <td>{{ $upload->filename }}</td>
-                <td>{{ App\Course::find($upload->course_id)->first()->course_name  }}</td>
+                <td>{{ App\Course::find($upload->course_id)->course_name  }}</td>
                 <td><a href="/file_delete/{{ $upload->id  }}">Delete</a></td>
             </tr>
         @endforeach

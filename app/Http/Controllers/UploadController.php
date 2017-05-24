@@ -36,7 +36,8 @@ class UploadController extends Controller
         $upload = Upload::create([
             'filepath' => $file,
             'filename' => $filename,
-            'course_id' => $course->id
+            'course_id' => $course->id,
+            'user_id' => auth()->user()
         ]);
         $users_to_email = $course->users;
         $a = [];
