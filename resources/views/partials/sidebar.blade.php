@@ -12,8 +12,8 @@
     <div class="sidebar-module">
         <h4>Elsewhere</h4>
         <ol class="list-unstyled">
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Facebook</a></li>
+            <li><a href="https://twitter.com/notedist">Twitter</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100017351354993">Facebook</a></li>
         </ol>
     </div>
 </div><!-- /.blog-sidebar -->
