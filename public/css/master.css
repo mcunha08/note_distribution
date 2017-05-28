@@ -165,7 +165,64 @@ h6, .h6 {
     margin-bottom: 0;
 }
 
-th, td {
-    display: inline-block;
-    margin:10px;
+/*th, td {*/
+    /*display: inline-block;*/
+    /*margin:10px;*/
+/*}*/
+
+th, td{
+    align:center;
+    padding: 5px;
+}
+
+.icon {
+    width:45px;
+    height:45px;
+}
+.response{
+    margin:5px;
+    display:inline;
+    width:100%;
+    border:1px solid black;
+}
+.response .footer{
+    width:80%;
+    text-align:right;
+    font-size:0.6em;
+    float:right;
+}
+.response img{
+    display:inline;
+    border-right:2px;
+    max-height:30px;
+    max-width: 30px;
+    height:100%;
+    vertical-align: middle;
+
+}
+.response p{
+    margin-left: 5px;
+    width:80%;
+    display:inline-block;
+}
+.new-post{
+    min-height:25px;
+    background-color:deepskyblue;
+    color: #FFFFFF;
+    padding-left:5px;
+    padding-right:5px;
+    font-weight:500;
+    font-size:1.2em;
+    border-radius: 3%;
+    float:right;
+    box-shadow: #0d3625;
+}
+.post-title{
+    font-size:1.2em;
+    font-weight:600;
+}
+.profile-picture{
+    max-height: 120px;
+    max-width:120px;
+    padding-left:5px;
 }

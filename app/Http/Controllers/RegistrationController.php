@@ -20,12 +20,20 @@ class RegistrationController extends Controller
         else{
             return back()->withErrors(['message'=>'Please upload your student id']);
         }
+        if(request()->hasFile('profile_picture')) {
+            $profile_picture = request()->file('profile_picture')->store('public');
+        }
+        else{
+            return back()->withErrors(['message'=>'Please upload your profile picture']);
+        }
+//        dd($profile_picture);
         $user = User::create([
             'name' => request('name'),
             'email' => request('email'),
             'password' => bcrypt(request('password')),
             'gpa' => request('gpa'),
             'studentid' => $file,
+            'profile_picture'=>$profile_picture,
             'role_id' => Role::where('role', 'InactiveStudent')->first()->id
         ]);
         $user->save();

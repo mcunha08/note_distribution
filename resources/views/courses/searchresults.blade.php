@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@section('title')
+    Note Distribution - Search Results
+@endsection
 @section('content')
    <h1>Search results:</h1>
    <div class="col-sm-8 blog-main">

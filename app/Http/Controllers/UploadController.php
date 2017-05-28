@@ -7,6 +7,8 @@ use Illuminate\Routing\UrlGenerator;
 use App\Upload;
 use App\Course;
 use Mail;
+use Log;
+use Illuminate\Support\Facades\DB;
 class UploadController extends Controller
 {
     public function file_upload(){
@@ -32,13 +34,14 @@ class UploadController extends Controller
         else{
             $course = Course::find(request()->courselist);
         }
-
+//        DB::enableQueryLog();
         $upload = Upload::create([
             'filepath' => $file,
             'filename' => $filename,
             'course_id' => $course->id,
-            'user_id' => auth()->user()
+            'user_id' => auth()->user()->id
         ]);
+//        Log::error(DB::getQueryLog());
         $users_to_email = $course->users;
         $a = [];
         foreach($users_to_email as $user){

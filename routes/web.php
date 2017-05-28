@@ -34,3 +34,4 @@ Route::get('/create_post/{id}', 'PostsController@show');
 Route::post('/create_post/{id}', 'PostsController@create');
 Route::get('/posts/{id}', 'PostsController@show_post');
 Route::post('/create_response/{id}', 'ResponseController@create');
+Route::get('/users/{id}', 'UserController@profile');

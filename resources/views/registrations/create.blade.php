@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@section('title')
+    Note Distribution - Register
+@endsection
 @section('content')
     <div class="col-sm-8 blog-main">
         <h1>Register now</h1>
@@ -36,7 +38,7 @@
                 <label for="password" class="col-md-4 control-label">Password</label>
 
                 <div class="col-md-6">
-                    <input id="password" type="text" class="form-control" name="password" required>
+                    <input id="password" type="password" class="form-control" name="password" required>
 
                     @if ($errors->has('password'))
                         <span class="help-block">
@@ -67,6 +69,19 @@
                     @if ($errors->has('studentid'))
                         <span class="help-block">
                                         <strong>{{ $errors->first('studentid') }}</strong>
+                                    </span>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group{{ $errors->has('profile_picture') ? ' has-error' : '' }}">
+                <label for="profile_picture" class="col-md-4 control-label">Profile Picture</label>
+
+                <div class="col-md-6">
+                    <input id="profile_picture" type="file" class="form-control" name="profile_picture" required>
+
+                    @if ($errors->has('profile_picture'))
+                        <span class="help-block">
+                                        <strong>{{ $errors->first('profile_picture') }}</strong>
                                     </span>
                     @endif
                 </div>

@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@section('title')
+    Note Distribution - User List
+@endsection
 @section('content')
     <div class="col-sm-8 blog-main">
         <table>

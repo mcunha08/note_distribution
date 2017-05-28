@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@section('title')
+    Note Distribution - Make a new post
+@endsection
 @section('content')
     <div class="col-sm-8 blog-main">
         <h1>Create a new post for {{$course->course_name}}</h1>
@@ -8,7 +10,7 @@
             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                 <label for="title" class="col-md-4 control-label">Title:</label>
 
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <input id="title" type="textarea" class="form-control" name="title">
 
                     @if ($errors->has('title'))
@@ -23,18 +25,18 @@
                 <label for="body" class="col-md-4 control-label">Body:</label>
 
                 <div class="col-md-6">
-                    <input id="body" type="textarea" class="form-control" name="body">
+                    <textarea name="body" cols="41" rows="5"></textarea>
 
                     @if ($errors->has('body'))
                         <span class="help-block">
-                                        <strong>{{ $errors->first('body') }}</strong>
-                                    </span>
+                            <strong>{{ $errors->first('body') }}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
 
             <div class="form-group">
-                <div class="col-md-0 ">
+                <div class="col-md-12 ">
                     <button type="submit" class="btn btn-primary">
                         Submit
                     </button>
