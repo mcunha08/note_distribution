@@ -14,6 +14,12 @@ class UserController extends Controller
         $message = sprintf("Successfully subscribed to %s",Course::find($id)->course_name);
         return view('single_message', compact('message'));
     }
+    public function unsubscribe($id){
+        $user = auth()->user();
+        $user->courses()->detach($id);
+        $message = sprintf("Successfully unsubscribed from %s",Course::find($id)->course_name);
+        return view('single_message', compact('message'));
+    }
     public function profile($id){
         $user = User::find($id);
         $files = Upload::where('user_id', $id)->get();

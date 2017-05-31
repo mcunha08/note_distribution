@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\UrlGenerator;
 use App\Upload;
 use App\Course;
+use App\Report;
 use Mail;
 use Log;
 use Illuminate\Support\Facades\DB;
@@ -54,5 +55,19 @@ class UploadController extends Controller
             $m->to($user->email, $user->name)->subject('New course material available for ' . $course->course_name);
         });
         return view('uploads.successful_upload', compact('upload', 'filename','user', 'url'));
+    }
+    public function report($id){
+
+        if(count(Report::where('user_id', auth()->user()->id)->where('upload_id', $id)->get()) == 0){
+            Report::create([
+                'user_id' => auth()->user()->id,
+                'upload_id' => $id]);
+            $message = sprintf("Successfully reported %s", Upload::find($id)->filename);
+            return view('single_message', compact('message'));
+        }
+        else{
+            $message = sprintf("You've already reported %s", Upload::find($id)->filename);
+            return view('single_message', compact('message'));
+        }
     }
 }

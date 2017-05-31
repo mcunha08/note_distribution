@@ -44,7 +44,4 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany(Post::class);
     }
-//    public function hasRole($id){
-//        return $this->roles()->contains($id);
-//     }
 }

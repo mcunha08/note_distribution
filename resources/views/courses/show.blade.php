@@ -10,13 +10,15 @@
             <tr>
                 <th>Filename</th>
                 <th>User</th>
-                <th>Date uploaded</th>
+                <th>Uploaded</th>
+                <th>Report</th>
             </tr>
         @foreach($files as $file)
             <tr>
                 <td><a href="{{ Storage::disk('local')->url($file->filepath) }}">{{ $file->filename }}</td>
                 <td><a href="/users/{{$file->user_id}}">{{ App\User::find($file->user_id)->name }}</a></td>
                 <td>{{$file->created_at->diffForHumans()}}</td>
+                <td><a href="/report/{{ $file->id  }}">Report this file</a></td>
             </tr>
         @endforeach
         </table>

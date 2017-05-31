@@ -37,7 +37,7 @@ class AdministratorsController extends Controller
 
     public function file_list(){
         if(auth()->user()->role_id == Role::where("role", "Administrator")->first()->id) {
-            $uploads = Upload::all();
+            $uploads = Upload::paginate(10);
             return view('administrator.file_list', compact('uploads'));
         }
         return redirect('/');

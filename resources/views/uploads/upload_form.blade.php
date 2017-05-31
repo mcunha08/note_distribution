@@ -7,7 +7,7 @@
         <h1>Upload course material</h1>
         <form method="POST" action="/upload" enctype="multipart/form-data">
             {{ csrf_field() }}
-            <div class="form-group {{ $errors->has('course') ? ' has-error' : '' }}">
+            <div class="form-group col-sm-12 {{ $errors->has('course') ? ' has-error' : '' }}">
                 <label for="course" class="col-sm-4 control-label">New course:</label>
 
                 <div class="col-sm-8">
@@ -21,7 +21,8 @@
                 </div>
             </div>
 
-            <div class="form-group {{ $errors->has('courselist') ? ' has-error' : '' }}">
+
+            <div class="form-group col-sm-12 {{ $errors->has('courselist') ? ' has-error' : '' }}">
                 <label for="courselist" class="col-sm-4 control-label">Existing course:</label>
 
                 <div class="col-sm-8">
@@ -39,8 +40,7 @@
                 </div>
             </div>
 
-
-            <div class="form-group {{ $errors->has('uploadfile') ? ' has-error' : '' }}">
+            <div class="form-group col-sm-12 {{ $errors->has('uploadfile') ? ' has-error' : '' }}">
                 <label for="uploadfile" class="col-sm-4 control-label">File:</label>
 
                 <div class="col-sm-8">
