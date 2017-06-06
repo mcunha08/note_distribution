@@ -11,7 +11,14 @@
 |
 */
 
-Route::get('/', 'HomeController@home')->name('home');
+Route::get('/', function(){
+    return view('home');
+}
+)->name('home');
+Route::get('/home', function(){
+    return view('home');
+}
+)->name('home');
 Route::get('/register', 'RegistrationController@create');
 Route::get('/users_list', 'AdministratorsController@list');
 Route::get('/users_list/{user}', 'AdministratorsController@show');
@@ -37,3 +44,8 @@ Route::get('/posts/{id}', 'PostsController@show_post');
 Route::post('/create_response/{id}', 'ResponseController@create');
 Route::get('/users/{id}', 'UserController@profile');
 Route::get('/report/{id}', 'UploadController@report');
+Route::get('/send_no_emails', 'UserController@send_no_emails');
+Route::get('/send_emails', 'UserController@send_emails');
+//Route::get('/password/reset', 'Auth.ResetPasswordController@'
+
+Auth::routes();

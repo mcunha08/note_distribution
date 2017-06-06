@@ -5,6 +5,7 @@
 @section('content')
     <div class="col-sm-8 blog-main">
         <ul>
+            <li>ID: {{ $user->id }}</li>
             <li>Name: {{ $user->name }}</li>
             <li>Email: {{ $user->email }}</li>
             <li>GPA: {{ $user->gpa }}</li>

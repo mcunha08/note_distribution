@@ -43,17 +43,14 @@ class UploadController extends Controller
             'user_id' => auth()->user()->id
         ]);
 //        Log::error(DB::getQueryLog());
-        $users_to_email = $course->users;
-        $a = [];
-        foreach($users_to_email as $user){
-            $a[] = $user->email;
+        $users_to_email = $course->users()->where('emails',1)->get();
+
+        foreach($users_to_email as $user) {
+            Mail::send('emails.subscribe_notification', compact('course', 'filename', 'user', 'url'), function ($m) use ($user, $course) {
+                $m->from('note_distribution@wou.edu', 'Note Distrbution');
+                $m->to($user->email, $user->name)->subject('New course material available for ' . $course->course_name);
+            });
         }
-        $user = auth()->user();
-        $url = "";
-        Mail::send('emails.subscribe_notification',compact('course','filename','user', 'url') , function ($m) use ($user, $course) {
-            $m->from('note_distribution@wou.edu', 'Note Distrbution');
-            $m->to($user->email, $user->name)->subject('New course material available for ' . $course->course_name);
-        });
         return view('uploads.successful_upload', compact('upload', 'filename','user', 'url'));
     }
     public function report($id){
@@ -62,12 +59,7 @@ class UploadController extends Controller
             Report::create([
                 'user_id' => auth()->user()->id,
                 'upload_id' => $id]);
-            $message = sprintf("Successfully reported %s", Upload::find($id)->filename);
-            return view('single_message', compact('message'));
         }
-        else{
-            $message = sprintf("You've already reported %s", Upload::find($id)->filename);
-            return view('single_message', compact('message'));
-        }
+        return back();
     }
 }

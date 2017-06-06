@@ -1,4 +1,5 @@
 <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+    @if(auth()->check())
     <div class="sidebar-module sidebar-module-inset">
         <h4>Recently Uploaded</h4>
         <ul>
@@ -17,4 +18,5 @@
             <a href="https://twitter.com/notedist"><img class="icon" src="/images/twitter_icon.png"></img></a>
         </ol>
     </div>
+    @endif
 </div><!-- /.blog-sidebar -->

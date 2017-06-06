@@ -14,7 +14,9 @@ class AdministratorsController extends Controller
             return view('administrator.users_list', compact('users'));
         }
         $message = "Yo, you're not an admin. Get out.";
-        return view('single_message', compact('message'));
+        $link = "/";
+        $link_message = "Click here to get out";
+        return view('single_message', compact('message', 'link', 'link_message'));
     }
     public function show($id){
         if(auth()->user()->role_id == Role::where("role", "Administrator")->first()->id) {
@@ -22,7 +24,9 @@ class AdministratorsController extends Controller
             return view('administrator.show', compact('user'));
         }
         $message = "Yo, you're not an admin. Get out.";
-        return view('single_message', compact('message'));
+        $link = "/";
+        $link_message = "Click here to get out";
+        return view('single_message', compact('message', 'link', 'link_message'));
     }
     public function activate($id, $role){
         if(auth()->user()->role_id == Role::where("role", "Administrator")->first()->id) {
@@ -32,7 +36,9 @@ class AdministratorsController extends Controller
             return view('administrator.successful_activation', compact('user'));
         }
         $message = "Yo, you're not an admin. Get out.";
-        return view('single_message', compact('message'));
+        $link = "/";
+        $link_message = "Click here to get out";
+        return view('single_message', compact('message', 'link', 'link_message'));
     }
 
     public function file_list(){

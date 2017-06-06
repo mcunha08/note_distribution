@@ -26,6 +26,24 @@
                     </tr>
                 @endforeach
             </table>
+            <div class="col-sm-12"><br/></div>
+            @if(auth()->user()->id == $user->id)
+                <div class="col-sm-12">
+                    <h1>Your subscribed courses:</h1>
+                    <ul>
+                        @foreach(auth()->user()->courses as $course)
+                            <li>{{$course->course_name}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="col-sm-12">
+                    @if(auth()->user()->emails == 1)
+                        <a href="/send_no_emails">Click here to shut off email notifications for subscribed courses</a>
+                    @else
+                        <a href="/send_emails">Click here to turn on email notifications for subscribed courses</a>
+                    @endif
+                </div>
+            @endif
         </div>
     </div>
 @endsection

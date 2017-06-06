@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Auth;
+use App\Role;
 class RegisterController extends Controller
 {
     /*
@@ -62,10 +63,30 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+//        dd(request()->all());
+//        dd(request()->hasFile('studentid'));
+        if(request()->hasFile('studentid')) {
+            $file = request()->file('studentid')->store('public');
+        }
+
+//        else{
+//            return back()->withErrors(['message'=>'Please upload your student id']);
+//        }
+        if(request()->hasFile('profile_picture')) {
+            $profile_picture = request()->file('profile_picture')->store('public');
+        }
+//        else{
+//            return back()->withErrors(['message'=>'Please upload your profile picture']);
+//        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'gpa' => request('gpa'),
+            'studentid' => $file,
+            'profile_picture'=>$profile_picture,
+            'role_id' => Role::where('role', 'InactiveStudent')->first()->id
         ]);
+
     }
 }
